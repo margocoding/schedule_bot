@@ -30,6 +30,31 @@ import {
 
 const bot = new Telegraf(config.TELEGRAM_TOKEN);
 
+// Глобальный обработчик ошибок для бота
+bot.catch(async (error, ctx) => {
+  console.error('Bot error:', error);
+
+  // Если есть контекст, отправляем сообщение пользователю
+  if (ctx && ctx.reply) {
+    try {
+      await ctx.reply("Произошла неизвестная ошибка 🤖");
+    } catch (replyError) {
+      console.error('Failed to send error message:', replyError);
+    }
+  }
+});
+
+// Глобальные обработчики ошибок процесса
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+  // Не завершаем процесс, продолжаем работу
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  // Не завершаем процесс, продолжаем работу
+});
+
 const ACTIVE_BOOKING_STATUSES = [
   "scheduled",
   "awaiting_confirmation",
