@@ -1,0 +1,24 @@
+{
+  "name": "beauty-schedule-bot",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch app.ts"
+  },
+  "dependencies": {
+    "bullmq": "^5.58.0",
+    "dotenv": "^17.4.2",
+    "ioredis": "^5.7.0",
+    "mongodb": "^7.2.0",
+    "mongoose": "^8.18.0",
+    "telegraf": "^4.16.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^6.0.3"
+  }
+}
