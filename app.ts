@@ -1307,13 +1307,13 @@ const openAdminPanel = async (ctx: any) => {
           ],
           [
             {
-              text: "� Контакты и адрес",
+              text: "📍 Контакты и адрес",
               callback_data: "admin_contacts_settings",
             },
           ],
           [
             {
-              text: "�🗑 Удалить услугу",
+              text: "🗑 Удалить услугу",
               callback_data: "admin_service_delete_menu",
             },
           ],
